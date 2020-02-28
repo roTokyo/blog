@@ -1,4 +1,4 @@
-# [myBlog](https://rotokyo.github.io/blog)
+# [Enjoy Japan!](https://rotokyo.github.io/blog)
 
 This site is about Japan.
 It is written in italian and report some few experieces I did in the country in the last 30 years. It's a work in progress so I do not think this site should be public yet.
