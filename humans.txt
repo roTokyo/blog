@@ -1,0 +1,22 @@
+*
+*
+* Team:  kazuRo --- We are human! ... Do you?
+*
+*
+*  Creator:       Ro
+*  Mail:          roTokyo@icloud.com
+*  WebSite:       ro.github.io
+*  Photo Gallery: www.flickr.com/photos/rotokyo/albums
+*  Location:      Tokyo, Japan
+*
+*  Last updated: 2020-02-28 09:42:42 +0000
+*
+*  Language:     日本語, English, Italiano
+*  Built with:   Jekyll 3.8.5 <https://jekyllrb.com>
+*								 BBEdit <https://www.barebones.com>
+*								 Atom <https://https://atom.io/>
+*								 Skeleton <http://getskeleton.com/>
+*								 JPEGmini Lite <https://www.jpegmini.com>
+*								 Real Favicon Generator <https://realfavicongenerator.net>
+*
+
