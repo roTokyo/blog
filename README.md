@@ -54,6 +54,6 @@ Most of the material I collected during this period is analog, for that, it will
 ---
 
 ###### License
-[![LICENSE](https://img.shields.io/badge/Personal%20Data%20Protected%20by%3A-EU%20GDPR%20Law-orange)](https://europa.eu/youreurope/business/dealing-with-customers/data-protection/data-protection-gdpr/index_en.htm) [![LICENSE](https://img.shields.io/badge/roTokyo%20pictures-CC--BY--NC--ND%204.0-orange)](https://creativecommons.org/licenses/by-nc-nd/4.0/)  
+[![LICENSE](https://img.shields.io/badge/Personal%20Data%20Protected%20by%3A-EU%20GDPR%20Law-orange)](https://europa.eu/youreurope/business/dealing-with-customers/data-protection/data-protection-gdpr/index_en.htm)   [![LICENSE](https://img.shields.io/badge/roTokyo%20pictures-CC--BY--NC--ND%204.0-orange)](https://creativecommons.org/licenses/by-nc-nd/4.0/)
 
 ![@ Team kazuRo](https://img.shields.io/badge/@%20Team%20kazuRo%20%3A%20-%20%20We%20are%20humans!-informational)
