@@ -8,10 +8,10 @@
 *  Photo Gallery: www.flickr.com/photos/rotokyo/albums
 *  Location:      Tokyo, Japan
 *
-*  Last updated: 2020-03-18 14:42:42 +0000
+*  Last updated: 2020-03-25 06:18:04 +0000
 *
 *  Language:     Japanese, English, Italiano
-*  Built with:   Jekyll 3.8.5 <https://jekyllrb.com>
+*  Built with:   Jekyll 4.0.0 <https://jekyllrb.com>
 *                BBEdit <https://www.barebones.com>
 *                Atom <https://https://atom.io/>
 *                JPEGmini Lite <https://www.jpegmini.com>

@@ -1,2 +1,639 @@
 /*! bigfoot.js - v2.1.4  https://github.com/lemonmade/bigfoot */
-(function(){var k;(k=jQuery).bigfoot=function(t){var o,e,d,n,s,O,i,a,r,_,l,f,c,u,v,b,C,p,g,T,h,m,y,w,x,F,N;return r={actionOriginalFN:"hide",activateCallback:function(){},activateOnHover:!1,allowMultipleFN:!1,anchorPattern:/(fn|footnote|note)[:\-_\d]/gi,anchorParentTagname:"sup",breakpoints:{},deleteOnUnhover:!1,footnoteParentClass:"footnote",footnoteTagname:"li",hoverDelay:250,numberResetSelector:d=void 0,popoverDeleteDelay:300,popoverCreateDelay:100,positionContent:!0,preventPageScroll:!0,scope:!1,useFootnoteOnlyOnce:!0,contentMarkup:'<aside class="bigfoot-footnote is-positioned-bottom" data-footnote-number="{{FOOTNOTENUM}}" data-footnote-identifier="{{FOOTNOTEID}}" alt="Footnote {{FOOTNOTENUM}}"> <div class="bigfoot-footnote__wrapper"> <div class="bigfoot-footnote__content"> {{FOOTNOTECONTENT}} </div></div> <div class="bigfoot-footnote__tooltip"></div> </aside>',buttonMarkup:'<div class=\'bigfoot-footnote__container\'> <button class="bigfoot-footnote__button" id="{{SUP:data-footnote-backlink-ref}}" data-footnote-number="{{FOOTNOTENUM}}" data-footnote-identifier="{{FOOTNOTEID}}" alt="guarda la nota n\xb0 {{FOOTNOTENUM}}" rel="footnote" data-bigfoot-footnote="{{FOOTNOTECONTENT}}"> <svg class="bigfoot-footnote__button__circle" viewbox="0 0 6 6" preserveAspectRatio="xMinYMin"><circle r="3" cx="3" cy="3" fill="white"></circle></svg> <svg class="bigfoot-footnote__button__circle" viewbox="0 0 6 6" preserveAspectRatio="xMinYMin"><circle r="3" cx="3" cy="3" fill="white"></circle></svg> <svg class="bigfoot-footnote__button__circle" viewbox="0 0 6 6" preserveAspectRatio="xMinYMin"><circle r="3" cx="3" cy="3" fill="white"></circle></svg> </button></div>'},y=k.extend(r,t),v={},f=function(){var t,o,e,n,i,a,r,s,l,f,c,d,u,p,g,h,v,b,m;for(f=y.scope?y.scope+' a[href*="#"]':'a[href*="#"]',e=k(f).filter(function(){var t,o;return"null"!==(o=(t=k(this)).attr("rel"))&&null!=o||(o=""),(""+t.attr("href")+o).match(y.anchorPattern)&&t.closest("[class*="+y.footnoteParentClass+"]:not(a):not("+y.anchorParentTagname+")").length<1}),g=[],s=[],O(e,u=[]),k(u).each(function(){var t,o;if(o=k(this).data("footnote-ref").replace(/[:.+~*\]\[]/g,"\\$&"),y.useFootnoteOnlyOnce&&(o+=":not(.footnote-processed)"),0<(t=k(o).closest(y.footnoteTagname)).length)return g.push(t.first().addClass("footnote-processed")),s.push(this)}),d=(o=k("[data-footnote-identifier]:last")).length<1?0:+o.data("footnote-identifier"),m=[],h=v=0,b=g.length;0<=b?v<b:b<v;h=0<=b?++v:--v)switch(c=(c=C(k(g[h]).html().trim(),k(s[h]).data("footnote-backlink-ref"))).replace(/"/g,"&quot;").replace(/&lt;/g,"&ltsym;").replace(/&gt;/g,"&gtsym;"),d+=1,l="",a=k(s[h]),r=k(g[h]),null!=y.numberResetSelector?((t=a.closest(y.numberResetSelector)).is(n)?p+=1:p=1,n=t):p=d,0!==c.indexOf("<")&&(c="<p>"+c+"</p>"),l=y.buttonMarkup.replace(/\{\{FOOTNOTENUM\}\}/g,p).replace(/\{\{FOOTNOTEID\}\}/g,d).replace(/\{\{FOOTNOTECONTENT\}\}/g,c),l=T(l,"SUP",a),l=T(l,"FN",r),k(l).insertBefore(a),i=r.parent(),y.actionOriginalFN.toLowerCase()){case"hide":a.addClass("footnote-print-only"),r.addClass("footnote-print-only"),m.push(_(i));break;case"delete":a.remove(),r.remove(),m.push(_(i));break;default:m.push(a.addClass("footnote-print-only"))}return m},O=function(t,e){var n,i,a;null==e&&(e=[]),a=i=n=void 0,t.each(function(){var t,o;return o=k(this),i="#"+o.attr("href").split("#")[1],n=o.closest(y.anchorParentTagname),t=o.find(y.anchorParentTagname),0<n.length?(a=(n.attr("id")||"")+(o.attr("id")||""),e.push(n.attr({"data-footnote-backlink-ref":a,"data-footnote-ref":i}))):(a=0<t.length?(t.attr("id")||"")+(o.attr("id")||""):o.attr("id")||"",e.push(o.attr({"data-footnote-backlink-ref":a,"data-footnote-ref":i})))})},_=function(t){var o;return o=void 0,t.is(":empty")||0===t.children(":not(.footnote-print-only)").length?(o=t.parent(),"delete"===y.actionOriginalFN.toLowerCase()?t.remove():t.addClass("footnote-print-only"),_(o)):t.children(":not(.footnote-print-only)").length===t.children("hr:not(.footnote-print-only)").length?(o=t.parent(),"delete"===y.actionOriginalFN.toLowerCase()?t.remove():(t.children("hr").addClass("footnote-print-only"),t.addClass("footnote-print-only")),_(o)):void 0},C=function(t,o){var e;return 0<=o.indexOf(" ")&&(o=o.trim().replace(/\s+/g,"|").replace(/(.*)/g,"($1)")),e=new RegExp("(\\s|&nbsp;)*<\\s*a[^#<]*#"+o+"[^>]*>(.*?)<\\s*/\\s*a>","g"),t.replace(e,"").replace("[]","")},T=function(t,o,e){var n,i,a;for(a=n=void 0,n=(i=new RegExp("\\{\\{"+o+":([^\\}]*)\\}\\}","g")).exec(t);n;)n[1]&&(a=e.attr(n[1])||"",t=t.replace("{{"+o+":"+n[1]+"}}",a)),n=i.exec(t);return t},n=function(t){var o,e;if(y.activateOnHover){if(e='[data-footnote-identifier="'+(o=k(t.target).closest(".bigfoot-footnote__button")).attr("data-footnote-identifier")+'"]',o.hasClass("is-active"))return;o.addClass("is-hover-instantiated"),y.allowMultipleFN||g(".bigfoot-footnote:not("+e+")"),a(".bigfoot-footnote__button"+e).addClass("is-hover-instantiated")}},w=function(t){var o,e,n;o=(n=k(t.target)).closest(".bigfoot-footnote__button"),e=n.closest(".bigfoot-footnote"),0<o.length?(t.preventDefault(),i(o)):e.length<1&&0<k(".bigfoot-footnote").length&&g()},i=function(t){var o;t.blur(),o='data-footnote-identifier="'+t.attr("data-footnote-identifier")+'"',t.hasClass("changing")||(t.hasClass("is-active")?y.allowMultipleFN?g(".bigfoot-footnote["+o+"]"):g():(t.addClass("changing"),setTimeout(function(){return t.removeClass("changing")},y.popoverCreateDelay),a(".bigfoot-footnote__button["+o+"]"),t.addClass("is-click-instantiated"),y.allowMultipleFN||g(".bigfoot-footnote:not(["+o+"])")))},a=function(t){var a,r;return a=void 0,a="string"!=typeof t&&y.allowMultipleFN?t:"string"!=typeof t?t.first():y.allowMultipleFN?k(t).closest(".bigfoot-footnote__button"):k(t+":first").closest(".bigfoot-footnote__button"),r=k(),a.each(function(){var t,o,e,n;e=k(this),n=void 0;try{return n=y.contentMarkup.replace(/\{\{FOOTNOTENUM\}\}/g,e.attr("data-footnote-number")).replace(/\{\{FOOTNOTEID\}\}/g,e.attr("data-footnote-identifier")).replace(/\{\{FOOTNOTECONTENT\}\}/g,e.attr("data-bigfoot-footnote")).replace(/\&gtsym\;/g,"&gt;").replace(/\&ltsym\;/g,"&lt;"),n=T(n,"BUTTON",e)}finally{t=k(n);try{y.activateCallback(t,e)}catch(i){}t.insertAfter(a),v[e.attr("data-footnote-identifier")]="init",t.attr("bigfoot-max-width",s(t.css("max-width"),t)),t.css("max-width",1e4),o=t.find(".bigfoot-footnote__content"),t.attr("data-bigfoot-max-height",s(o.css("max-height"),o)),h(),e.addClass("is-active"),t.find(".bigfoot-footnote__content").bindScrollHandler(),r=r.add(t)}}),setTimeout(function(){return r.addClass("is-active")},y.popoverCreateDelay),r},e=function(){var t,o;return(t=document.createElement("div")).style.cssText="display:inline-block;padding:0;line-height:1;position:absolute;visibility:hidden;font-size:1em;",t.appendChild(document.createElement("M")),document.body.appendChild(t),o=t.offsetHeight,document.body.removeChild(t),o},s=function(t,o){return"none"===t?t=1e4:0<=t.indexOf("rem")?t=parseFloat(t)*e():0<=t.indexOf("em")?t=parseFloat(t)*parseFloat(o.css("font-size")):0<=t.indexOf("px")?(t=parseFloat(t))<=60&&(t/=parseFloat(o.parent().css("width"))):0<=t.indexOf("%")&&(t=parseFloat(t)/100),t},k.fn.bindScrollHandler=function(){return y.preventPageScroll&&k(this).on("DOMMouseScroll mousewheel",function(t){var o,e,n,i,a,r,s,l;if(s=(e=k(this)).scrollTop(),r=e[0].scrollHeight,i=parseInt(e.css("height")),o=e.closest(".bigfoot-footnote"),0<e.scrollTop()&&e.scrollTop()<10&&o.addClass("is-scrollable"),o.hasClass("is-scrollable"))return a=function(){return t.stopPropagation(),t.preventDefault(),t.returnValue=!1},!(l=0<(n="DOMMouseScroll"===t.type?-40*t.originalEvent.detail:t.originalEvent.wheelDelta))&&r-i-s<-n?(e.scrollTop(r),o.addClass("is-fully-scrolled"),a()):l&&s<n?(e.scrollTop(0),o.removeClass("is-fully-scrolled"),a()):o.removeClass("is-fully-scrolled")}),k(this)},x=function(t){if(y.deleteOnUnhover&&y.activateOnHover)return setTimeout(function(){if(k(t.target).closest(".bigfoot-footnote, .bigfoot-footnote__button"),k(".bigfoot-footnote__button:hover, .bigfoot-footnote:hover").length<1)return g()},y.hoverDelay)},l=function(t){if(27===t.keyCode)return g()},g=function(t,o){var e,n,i,a;return null==t&&(t=".bigfoot-footnote"),null==o&&(o=y.popoverDeleteDelay),e=k(),i=n=a=void 0,k(t).each(function(){if(i=k(this),a=i.attr("data-footnote-identifier"),!(n=k('.bigfoot-footnote__button[data-footnote-identifier="'+a+'"]')).hasClass("changing"))return e=e.add(n),n.removeClass("is-active is-hover-instantiated is-click-instantiated").addClass("changing"),i.removeClass("is-active").addClass("disapearing"),setTimeout(function(){return i.remove(),delete v[a],n.removeClass("changing")},o)}),e},h=function(t){var h;y.positionContent&&(h=t?t.type:"resize",k(".bigfoot-footnote").each(function(){var t,o,e,n,i,a,r,s,l,f,c,d,u,p,g;if(n=(e=k(this)).attr("data-footnote-identifier"),e.find(".bigfoot-footnote__content"),t=e.siblings(".bigfoot-footnote__button"),d=m(t),a=parseFloat(e.css("margin-top")),r=+e.attr("data-bigfoot-max-height"),u=2*a+e.outerHeight(),s=1e4,c=d.bottomRoom<u&&d.topRoom>d.bottomRoom,i=v[n],c?("top"!==i&&(v[n]="top",e.addClass("is-positioned-top").removeClass("is-positioned-bottom"),e.css("transform-origin",100*d.leftRelative+"% 100%")),s=d.topRoom-a-15):("bottom"===i&&"init"!==i||(v[n]="bottom",e.removeClass("is-positioned-top").addClass("is-positioned-bottom"),e.css("transform-origin",100*d.leftRelative+"% 0%")),s=d.bottomRoom-a-15),e.find(".bigfoot-footnote__content").css({"max-height":Math.min(s,r)+"px"}),"resize"===h&&(f=parseFloat(e.attr("bigfoot-max-width")),o=e.find(".bigfoot-footnote__wrapper"),(l=f)<=1&&(g=1e4,y.maxWidthRelativeTo&&0<(p=k(y.maxWidthRelativeTo)).length&&(g=p.outerWidth()),l=Math.min(window.innerWidth,g)*f),l=Math.min(l,e.find(".bigfoot-footnote__content").outerWidth()+1),o.css("max-width",l+"px"),e.css({left:-d.leftRelative*l+parseFloat(t.css("margin-left"))+t.outerWidth()/2+"px"}),b(e,d.leftRelative)),parseInt(e.outerHeight())<e.find(".bigfoot-footnote__content")[0].scrollHeight)return e.addClass("is-scrollable")}))},b=function(t,o){var e;null==o&&(o=.5),0<(e=t.find(".bigfoot-footnote__tooltip")).length&&e.css("left",100*o+"%")},m=function(t){var o,e,n,i,a,r;return e=parseFloat(t.css("margin-left")),n=parseFloat(t.outerWidth())-e,o=parseFloat(t.outerHeight()),r=N(),a=t.offset().top-r.scrollY+o/2,i=t.offset().left-r.scrollX+n/2,{topRoom:a,bottomRoom:r.height-a,leftRoom:i,rightRoom:r.width-i,leftRelative:i/r.width,topRelative:a/r.height}},N=function(){var t;return t=k(window),{width:window.innerWidth,height:window.innerHeight,scrollX:t.scrollLeft(),scrollY:t.scrollTop()}},o=function(t,o,e,n,i){var a,r,s,l,f,c;return null==n&&(n=y.popoverDeleteDelay),null==i&&(i=!0),c=r=l=void 0,"string"==typeof t?(f=(r=">"===(c="iphone"===t.toLowerCase()?"<320px":"ipad"===t.toLowerCase()?"<768px":t).charAt(0)?"min":"<"===c.charAt(0)?"max":null)?"("+r+"-width: "+c.substring(1)+")":c,l=window.matchMedia(f)):l=t,l.media&&"invalid"===l.media?{added:!1,mq:l,listener:null}:(a="max"===r,o=o||u(i,n,"min"===r,function(t){return t.addClass("is-bottom-fixed")}),e=e||u(i,n,a,function(){}),s=function(t){t.matches?o(i,d):e(i,d)},l.addListener(s),s(l),y.breakpoints[t]={added:!0,mq:l,listener:s},y.breakpoints[t])},u=function(t,n,i,a){return function(t,o){var e;return e=void 0,t&&(e=o.close(),o.updateSetting("activateCallback",a)),setTimeout(function(){if(o.updateSetting("positionContent",i),t)return o.activate(e)},n)}},p=function(t,o){var e,n,i;if(e=void 0,i=!1,"string"==typeof t)i=y.breakpoints[t]!==undefined;else for(e in y.breakpoints)y.breakpoints.hasOwnProperty(e)&&y.breakpoints[e].mq===t&&(i=!0);return i&&(n=y.breakpoints[e||t],o?o({matches:!1}):n.listener({matches:!1}),n.mq.removeListener(n.listener),delete y.breakpoints[e||t]),i},F=function(t,o){var e,n;if(e=void 0,"string"==typeof t)e=y[t],y[t]=o;else for(n in e={},t)t.hasOwnProperty(n)&&(e[n]=y[n],y[n]=t[n]);return e},c=function(t){return y[t]},k(document).ready(function(){return f(),k(document).on("mouseenter",".bigfoot-footnote__button",n),k(document).on("touchend click",w),k(document).on("mouseout",".is-hover-instantiated",x),k(document).on("keyup",l),k(window).on("scroll resize",h),k(document).on("gestureend",function(){return h()})}),d={removePopovers:g,close:g,createPopover:a,activate:a,repositionFeet:h,reposition:h,addBreakpoint:o,removeBreakpoint:p,getSetting:c,updateSetting:F}}}).call(this);
+(function() {
+  (function($) {
+    return $.bigfoot = function(options) {
+      var addBreakpoint, baseFontSize, bigfoot, buttonHover, calculatePixelDimension, cleanFootnoteLinks, clickButton, createPopover, defaults, deleteEmptyOrHR, escapeKeypress, footnoteInit, getSetting, makeDefaultCallbacks, popoverStates, positionTooltip, removeBackLinks, removeBreakpoint, removePopovers, replaceWithReferenceAttributes, repositionFeet, roomCalc, settings, touchClick, unhoverFeet, updateSetting, viewportDetails;
+      bigfoot = void 0;
+      defaults = {
+        actionOriginalFN: "hide",
+        activateCallback: function() {},
+        activateOnHover: false,
+        allowMultipleFN: false,
+        anchorPattern: /(fn|footnote|note)[:\-_\d]/gi,
+        anchorParentTagname: 'sup',
+        breakpoints: {},
+        deleteOnUnhover: false,
+        footnoteParentClass: 'footnote',
+        footnoteTagname: 'li',
+        hoverDelay: 250,
+        numberResetSelector: void 0,
+        popoverDeleteDelay: 300,
+        popoverCreateDelay: 100,
+        positionContent: true,
+        preventPageScroll: true,
+        scope: false,
+        useFootnoteOnlyOnce: true,
+        contentMarkup: "<aside class=\"bigfoot-footnote is-positioned-bottom\" data-footnote-number=\"{{FOOTNOTENUM}}\" data-footnote-identifier=\"{{FOOTNOTEID}}\" alt=\"Footnote {{FOOTNOTENUM}}\"> <div class=\"bigfoot-footnote__wrapper\"> <div class=\"bigfoot-footnote__content\"> {{FOOTNOTECONTENT}} </div></div> <div class=\"bigfoot-footnote__tooltip\"></div> </aside>",
+        buttonMarkup: "<div class='bigfoot-footnote__container'> <button class=\"bigfoot-footnote__button\" id=\"{{SUP:data-footnote-backlink-ref}}\" data-footnote-number=\"{{FOOTNOTENUM}}\" data-footnote-identifier=\"{{FOOTNOTEID}}\" alt=\"guarda la nota n° {{FOOTNOTENUM}}\" rel=\"footnote\" data-bigfoot-footnote=\"{{FOOTNOTECONTENT}}\"> <svg class=\"bigfoot-footnote__button__circle\" viewbox=\"0 0 6 6\" preserveAspectRatio=\"xMinYMin\"><circle r=\"3\" cx=\"3\" cy=\"3\" fill=\"white\"></circle></svg> <svg class=\"bigfoot-footnote__button__circle\" viewbox=\"0 0 6 6\" preserveAspectRatio=\"xMinYMin\"><circle r=\"3\" cx=\"3\" cy=\"3\" fill=\"white\"></circle></svg> <svg class=\"bigfoot-footnote__button__circle\" viewbox=\"0 0 6 6\" preserveAspectRatio=\"xMinYMin\"><circle r=\"3\" cx=\"3\" cy=\"3\" fill=\"white\"></circle></svg> </button></div>"
+      };
+      settings = $.extend(defaults, options);
+      popoverStates = {};
+      footnoteInit = function() {
+        var $curResetElement, $currentLastFootnoteLink, $footnoteAnchors, $footnoteButton, $lastResetElement, $parent, $relevantFNLink, $relevantFootnote, finalFNLinks, footnoteButton, footnoteButtonSearchQuery, footnoteContent, footnoteIDNum, footnoteLinks, footnoteNum, footnotes, i, _i, _ref, _results;
+        footnoteButtonSearchQuery = settings.scope ? "" + settings.scope + " a[href*=\"#\"]" : "a[href*=\"#\"]";
+        $footnoteAnchors = $(footnoteButtonSearchQuery).filter(function() {
+          var $this, relAttr;
+          $this = $(this);
+          relAttr = $this.attr("rel");
+          if (relAttr === "null" || (relAttr == null)) {
+            relAttr = "";
+          }
+          return ("" + ($this.attr("href")) + relAttr).match(settings.anchorPattern) && $this.closest("[class*=" + settings.footnoteParentClass + "]:not(a):not(" + settings.anchorParentTagname + ")").length < 1;
+        });
+        footnotes = [];
+        footnoteLinks = [];
+        finalFNLinks = [];
+        cleanFootnoteLinks($footnoteAnchors, footnoteLinks);
+        $(footnoteLinks).each(function() {
+          var $closestFootnoteEl, relatedFN;
+          relatedFN = $(this).data("footnote-ref").replace(/[:.+~*\]\[]/g, "\\$&");
+          if (settings.useFootnoteOnlyOnce) {
+            relatedFN = "" + relatedFN + ":not(.footnote-processed)";
+          }
+          $closestFootnoteEl = $(relatedFN).closest(settings.footnoteTagname);
+          if ($closestFootnoteEl.length > 0) {
+            footnotes.push($closestFootnoteEl.first().addClass("footnote-processed"));
+            return finalFNLinks.push(this);
+          }
+        });
+        $currentLastFootnoteLink = $("[data-footnote-identifier]:last");
+        footnoteIDNum = $currentLastFootnoteLink.length < 1 ? 0 : +$currentLastFootnoteLink.data("footnote-identifier");
+        _results = [];
+        for (i = _i = 0, _ref = footnotes.length; 0 <= _ref ? _i < _ref : _i > _ref; i = 0 <= _ref ? ++_i : --_i) {
+          footnoteContent = removeBackLinks($(footnotes[i]).html().trim(), $(finalFNLinks[i]).data("footnote-backlink-ref"));
+          footnoteContent = footnoteContent.replace(/"/g, "&quot;").replace(/&lt;/g, "&ltsym;").replace(/&gt;/g, "&gtsym;");
+          footnoteIDNum += 1;
+          footnoteButton = "";
+          $relevantFNLink = $(finalFNLinks[i]);
+          $relevantFootnote = $(footnotes[i]);
+          if (settings.numberResetSelector != null) {
+            $curResetElement = $relevantFNLink.closest(settings.numberResetSelector);
+            if ($curResetElement.is($lastResetElement)) {
+              footnoteNum += 1;
+            } else {
+              footnoteNum = 1;
+            }
+            $lastResetElement = $curResetElement;
+          } else {
+            footnoteNum = footnoteIDNum;
+          }
+          if (footnoteContent.indexOf("<") !== 0) {
+            footnoteContent = "<p>" + footnoteContent + "</p>";
+          }
+          footnoteButton = settings.buttonMarkup.replace(/\{\{FOOTNOTENUM\}\}/g, footnoteNum).replace(/\{\{FOOTNOTEID\}\}/g, footnoteIDNum).replace(/\{\{FOOTNOTECONTENT\}\}/g, footnoteContent);
+          footnoteButton = replaceWithReferenceAttributes(footnoteButton, "SUP", $relevantFNLink);
+          footnoteButton = replaceWithReferenceAttributes(footnoteButton, "FN", $relevantFootnote);
+          $footnoteButton = $(footnoteButton).insertBefore($relevantFNLink);
+          $parent = $relevantFootnote.parent();
+          switch (settings.actionOriginalFN.toLowerCase()) {
+            case "hide":
+              $relevantFNLink.addClass("footnote-print-only");
+              $relevantFootnote.addClass("footnote-print-only");
+              _results.push(deleteEmptyOrHR($parent));
+              break;
+            case "delete":
+              $relevantFNLink.remove();
+              $relevantFootnote.remove();
+              _results.push(deleteEmptyOrHR($parent));
+              break;
+            default:
+              _results.push($relevantFNLink.addClass("footnote-print-only"));
+          }
+        }
+        return _results;
+      };
+      cleanFootnoteLinks = function($footnoteAnchors, footnoteLinks) {
+        var $parent, $supChild, linkHREF, linkID;
+        if (footnoteLinks == null) {
+          footnoteLinks = [];
+        }
+        $parent = void 0;
+        $supChild = void 0;
+        linkHREF = void 0;
+        linkID = void 0;
+        $footnoteAnchors.each(function() {
+          var $child, $this;
+          $this = $(this);
+          linkHREF = "#" + ($this.attr("href")).split("#")[1];
+          $parent = $this.closest(settings.anchorParentTagname);
+          $child = $this.find(settings.anchorParentTagname);
+          if ($parent.length > 0) {
+            linkID = ($parent.attr("id") || "") + ($this.attr("id") || "");
+            return footnoteLinks.push($parent.attr({
+              "data-footnote-backlink-ref": linkID,
+              "data-footnote-ref": linkHREF
+            }));
+          } else if ($child.length > 0) {
+            linkID = ($child.attr("id") || "") + ($this.attr("id") || "");
+            return footnoteLinks.push($this.attr({
+              "data-footnote-backlink-ref": linkID,
+              "data-footnote-ref": linkHREF
+            }));
+          } else {
+            linkID = $this.attr("id") || "";
+            return footnoteLinks.push($this.attr({
+              "data-footnote-backlink-ref": linkID,
+              "data-footnote-ref": linkHREF
+            }));
+          }
+        });
+      };
+      deleteEmptyOrHR = function($el) {
+        var $parent;
+        $parent = void 0;
+        if ($el.is(":empty") || $el.children(":not(.footnote-print-only)").length === 0) {
+          $parent = $el.parent();
+          if (settings.actionOriginalFN.toLowerCase() === "delete") {
+            $el.remove();
+          } else {
+            $el.addClass("footnote-print-only");
+          }
+          return deleteEmptyOrHR($parent);
+        } else if ($el.children(":not(.footnote-print-only)").length === $el.children("hr:not(.footnote-print-only)").length) {
+          $parent = $el.parent();
+          if (settings.actionOriginalFN.toLowerCase() === "delete") {
+            $el.remove();
+          } else {
+            $el.children("hr").addClass("footnote-print-only");
+            $el.addClass("footnote-print-only");
+          }
+          return deleteEmptyOrHR($parent);
+        }
+      };
+      removeBackLinks = function(footnoteHTML, backlinkID) {
+        var regex;
+        if (backlinkID.indexOf(' ') >= 0) {
+          backlinkID = backlinkID.trim().replace(/\s+/g, "|").replace(/(.*)/g, "($1)");
+        }
+        regex = new RegExp("(\\s|&nbsp;)*<\\s*a[^#<]*#" + backlinkID + "[^>]*>(.*?)<\\s*/\\s*a>", "g");
+        return footnoteHTML.replace(regex, "").replace("[]", "");
+      };
+      replaceWithReferenceAttributes = function(string, referenceKeyword, $referenceElement) {
+        var refMatches, refRegex, refReplaceRegex, refReplaceText;
+        refRegex = new RegExp("\\{\\{" + referenceKeyword + ":([^\\}]*)\\}\\}", "g");
+        refMatches = void 0;
+        refReplaceText = void 0;
+        refReplaceRegex = void 0;
+        refMatches = refRegex.exec(string);
+        while (refMatches) {
+          if (refMatches[1]) {
+            refReplaceText = $referenceElement.attr(refMatches[1]) || "";
+            string = string.replace("{{" + referenceKeyword + ":" + refMatches[1] + "}}", refReplaceText);
+          }
+          refMatches = refRegex.exec(string);
+        }
+        return string;
+      };
+      buttonHover = function(event) {
+        var $buttonHovered, dataIdentifier, otherPopoverSelector;
+        if (settings.activateOnHover) {
+          $buttonHovered = $(event.target).closest(".bigfoot-footnote__button");
+          dataIdentifier = "[data-footnote-identifier=\"" + ($buttonHovered.attr("data-footnote-identifier")) + "\"]";
+          if ($buttonHovered.hasClass("is-active")) {
+            return;
+          }
+          $buttonHovered.addClass("is-hover-instantiated");
+          if (!settings.allowMultipleFN) {
+            otherPopoverSelector = ".bigfoot-footnote:not(" + dataIdentifier + ")";
+            removePopovers(otherPopoverSelector);
+          }
+          createPopover(".bigfoot-footnote__button" + dataIdentifier).addClass("is-hover-instantiated");
+        }
+      };
+      touchClick = function(event) {
+        var $nearButton, $nearFootnote, $target;
+        $target = $(event.target);
+        $nearButton = $target.closest(".bigfoot-footnote__button");
+        $nearFootnote = $target.closest(".bigfoot-footnote");
+        if ($nearButton.length > 0) {
+          event.preventDefault();
+          clickButton($nearButton);
+        } else if ($nearFootnote.length < 1) {
+          if ($(".bigfoot-footnote").length > 0) {
+            removePopovers();
+          }
+        }
+      };
+      clickButton = function($button) {
+        var dataIdentifier;
+        $button.blur();
+        dataIdentifier = "data-footnote-identifier=\"" + ($button.attr("data-footnote-identifier")) + "\"";
+        if ($button.hasClass("changing")) {
+          return;
+        } else if (!$button.hasClass("is-active")) {
+          $button.addClass("changing");
+          setTimeout((function() {
+            return $button.removeClass("changing");
+          }), settings.popoverCreateDelay);
+          createPopover(".bigfoot-footnote__button[" + dataIdentifier + "]");
+          $button.addClass("is-click-instantiated");
+          if (!settings.allowMultipleFN) {
+            removePopovers(".bigfoot-footnote:not([" + dataIdentifier + "])");
+          }
+        } else {
+          if (!settings.allowMultipleFN) {
+            removePopovers();
+          } else {
+            removePopovers(".bigfoot-footnote[" + dataIdentifier + "]");
+          }
+        }
+      };
+      createPopover = function(selector) {
+        var $buttons, $popoversCreated;
+        $buttons = void 0;
+        if (typeof selector !== "string" && settings.allowMultipleFN) {
+          $buttons = selector;
+        } else if (typeof selector !== "string") {
+          $buttons = selector.first();
+        } else if (settings.allowMultipleFN) {
+          $buttons = $(selector).closest(".bigfoot-footnote__button");
+        } else {
+          $buttons = $(selector + ":first").closest(".bigfoot-footnote__button");
+        }
+        $popoversCreated = $();
+        $buttons.each(function() {
+          var $content, $contentContainer, $this, content;
+          $this = $(this);
+          content = void 0;
+          try {
+            content = settings.contentMarkup.replace(/\{\{FOOTNOTENUM\}\}/g, $this.attr("data-footnote-number")).replace(/\{\{FOOTNOTEID\}\}/g, $this.attr("data-footnote-identifier")).replace(/\{\{FOOTNOTECONTENT\}\}/g, $this.attr("data-bigfoot-footnote")).replace(/\&gtsym\;/g, "&gt;").replace(/\&ltsym\;/g, "&lt;");
+            return content = replaceWithReferenceAttributes(content, "BUTTON", $this);
+          } finally {
+            $content = $(content);
+            try {
+              settings.activateCallback($content, $this);
+            } catch (_error) {}
+            $content.insertAfter($buttons);
+            popoverStates[$this.attr("data-footnote-identifier")] = "init";
+            $content.attr("bigfoot-max-width", calculatePixelDimension($content.css("max-width"), $content));
+            $content.css("max-width", 10000);
+            $contentContainer = $content.find(".bigfoot-footnote__content");
+            $content.attr("data-bigfoot-max-height", calculatePixelDimension($contentContainer.css("max-height"), $contentContainer));
+            repositionFeet();
+            $this.addClass("is-active");
+            $content.find(".bigfoot-footnote__content").bindScrollHandler();
+            $popoversCreated = $popoversCreated.add($content);
+          }
+        });
+        setTimeout((function() {
+          return $popoversCreated.addClass("is-active");
+        }), settings.popoverCreateDelay);
+        return $popoversCreated;
+      };
+      baseFontSize = function() {
+        var el, size;
+        el = document.createElement("div");
+        el.style.cssText = "display:inline-block;padding:0;line-height:1;position:absolute;visibility:hidden;font-size:1em;";
+        el.appendChild(document.createElement("M"));
+        document.body.appendChild(el);
+        size = el.offsetHeight;
+        document.body.removeChild(el);
+        return size;
+      };
+      calculatePixelDimension = function(dim, $el) {
+        if (dim === "none") {
+          dim = 10000;
+        } else if (dim.indexOf("rem") >= 0) {
+          dim = parseFloat(dim) * baseFontSize();
+        } else if (dim.indexOf("em") >= 0) {
+          dim = parseFloat(dim) * parseFloat($el.css("font-size"));
+        } else if (dim.indexOf("px") >= 0) {
+          dim = parseFloat(dim);
+          if (dim <= 60) {
+            dim = dim / parseFloat($el.parent().css("width"));
+          }
+        } else if (dim.indexOf("%") >= 0) {
+          dim = parseFloat(dim) / 100;
+        }
+        return dim;
+      };
+      $.fn.bindScrollHandler = function() {
+        if (!settings.preventPageScroll) {
+          return $(this);
+        }
+        $(this).on("DOMMouseScroll mousewheel", function(event) {
+          var $popover, $this, delta, height, prevent, scrollHeight, scrollTop, up;
+          $this = $(this);
+          scrollTop = $this.scrollTop();
+          scrollHeight = $this[0].scrollHeight;
+          height = parseInt($this.css("height"));
+          $popover = $this.closest(".bigfoot-footnote");
+          if ($this.scrollTop() > 0 && $this.scrollTop() < 10) {
+            $popover.addClass("is-scrollable");
+          }
+          if (!$popover.hasClass("is-scrollable")) {
+            return;
+          }
+          delta = event.type === "DOMMouseScroll" ? event.originalEvent.detail * -40 : event.originalEvent.wheelDelta;
+          up = delta > 0;
+          prevent = function() {
+            event.stopPropagation();
+            event.preventDefault();
+            event.returnValue = false;
+            return false;
+          };
+          if (!up && -delta > scrollHeight - height - scrollTop) {
+            $this.scrollTop(scrollHeight);
+            $popover.addClass("is-fully-scrolled");
+            return prevent();
+          } else if (up && delta > scrollTop) {
+            $this.scrollTop(0);
+            $popover.removeClass("is-fully-scrolled");
+            return prevent();
+          } else {
+            return $popover.removeClass("is-fully-scrolled");
+          }
+        });
+        return $(this);
+      };
+      unhoverFeet = function(e) {
+        if (settings.deleteOnUnhover && settings.activateOnHover) {
+          return setTimeout((function() {
+            var $target;
+            $target = $(e.target).closest(".bigfoot-footnote, .bigfoot-footnote__button");
+            if ($(".bigfoot-footnote__button:hover, .bigfoot-footnote:hover").length < 1) {
+              return removePopovers();
+            }
+          }), settings.hoverDelay);
+        }
+      };
+      escapeKeypress = function(event) {
+        if (event.keyCode === 27) {
+          return removePopovers();
+        }
+      };
+      removePopovers = function(footnotes, timeout) {
+        var $buttonsClosed, $linkedButton, $this, footnoteID;
+        if (footnotes == null) {
+          footnotes = ".bigfoot-footnote";
+        }
+        if (timeout == null) {
+          timeout = settings.popoverDeleteDelay;
+        }
+        $buttonsClosed = $();
+        footnoteID = void 0;
+        $linkedButton = void 0;
+        $this = void 0;
+        $(footnotes).each(function() {
+          $this = $(this);
+          footnoteID = $this.attr("data-footnote-identifier");
+          $linkedButton = $(".bigfoot-footnote__button[data-footnote-identifier=\"" + footnoteID + "\"]");
+          if (!$linkedButton.hasClass("changing")) {
+            $buttonsClosed = $buttonsClosed.add($linkedButton);
+            $linkedButton.removeClass("is-active is-hover-instantiated is-click-instantiated").addClass("changing");
+            $this.removeClass("is-active").addClass("disapearing");
+            return setTimeout((function() {
+              $this.remove();
+              delete popoverStates[footnoteID];
+              return $linkedButton.removeClass("changing");
+            }), timeout);
+          }
+        });
+        return $buttonsClosed;
+      };
+      repositionFeet = function(e) {
+        var type;
+        if (settings.positionContent) {
+          type = e ? e.type : "resize";
+          $(".bigfoot-footnote").each(function() {
+            var $button, $contentWrapper, $mainWrap, $this, dataIdentifier, identifier, lastState, marginSize, maxHeightInCSS, maxHeightOnScreen, maxWidth, maxWidthInCSS, positionOnTop, relativeToWidth, roomLeft, totalHeight;
+            $this = $(this);
+            identifier = $this.attr("data-footnote-identifier");
+            dataIdentifier = "data-footnote-identifier=\"" + identifier + "\"";
+            $contentWrapper = $this.find(".bigfoot-footnote__content");
+            $button = $this.siblings(".bigfoot-footnote__button");
+            roomLeft = roomCalc($button);
+            marginSize = parseFloat($this.css("margin-top"));
+            maxHeightInCSS = +($this.attr("data-bigfoot-max-height"));
+            totalHeight = 2 * marginSize + $this.outerHeight();
+            maxHeightOnScreen = 10000;
+            positionOnTop = roomLeft.bottomRoom < totalHeight && roomLeft.topRoom > roomLeft.bottomRoom;
+            lastState = popoverStates[identifier];
+            if (positionOnTop) {
+              if (lastState !== "top") {
+                popoverStates[identifier] = "top";
+                $this.addClass("is-positioned-top").removeClass("is-positioned-bottom");
+                $this.css("transform-origin", (roomLeft.leftRelative * 100) + "% 100%");
+              }
+              maxHeightOnScreen = roomLeft.topRoom - marginSize - 15;
+            } else {
+              if (lastState !== "bottom" || lastState === "init") {
+                popoverStates[identifier] = "bottom";
+                $this.removeClass("is-positioned-top").addClass("is-positioned-bottom");
+                $this.css("transform-origin", (roomLeft.leftRelative * 100) + "% 0%");
+              }
+              maxHeightOnScreen = roomLeft.bottomRoom - marginSize - 15;
+            }
+            $this.find(".bigfoot-footnote__content").css({
+              "max-height": Math.min(maxHeightOnScreen, maxHeightInCSS) + "px"
+            });
+            if (type === "resize") {
+              maxWidthInCSS = parseFloat($this.attr("bigfoot-max-width"));
+              $mainWrap = $this.find(".bigfoot-footnote__wrapper");
+              maxWidth = maxWidthInCSS;
+              if (maxWidthInCSS <= 1) {
+                relativeToWidth = (function() {
+                  var jq, userSpecifiedRelativeElWidth;
+                  userSpecifiedRelativeElWidth = 10000;
+                  if (settings.maxWidthRelativeTo) {
+                    jq = $(settings.maxWidthRelativeTo);
+                    if (jq.length > 0) {
+                      userSpecifiedRelativeElWidth = jq.outerWidth();
+                    }
+                  }
+                  return Math.min(window.innerWidth, userSpecifiedRelativeElWidth);
+                })();
+                maxWidth = relativeToWidth * maxWidthInCSS;
+              }
+              maxWidth = Math.min(maxWidth, $this.find(".bigfoot-footnote__content").outerWidth() + 1);
+              $mainWrap.css("max-width", maxWidth + "px");
+              $this.css({
+                left: (-roomLeft.leftRelative * maxWidth + parseFloat($button.css("margin-left")) + $button.outerWidth() / 2) + "px"
+              });
+              positionTooltip($this, roomLeft.leftRelative);
+            }
+            if (parseInt($this.outerHeight()) < $this.find(".bigfoot-footnote__content")[0].scrollHeight) {
+              return $this.addClass("is-scrollable");
+            }
+          });
+        }
+      };
+      positionTooltip = function($popover, leftRelative) {
+        var $tooltip;
+        if (leftRelative == null) {
+          leftRelative = 0.5;
+        }
+        $tooltip = $popover.find(".bigfoot-footnote__tooltip");
+        if ($tooltip.length > 0) {
+          $tooltip.css("left", "" + (leftRelative * 100) + "%");
+        }
+      };
+      roomCalc = function($el) {
+        var elHeight, elLeftMargin, elWidth, leftRoom, topRoom, w;
+        elLeftMargin = parseFloat($el.css("margin-left"));
+        elWidth = parseFloat($el.outerWidth()) - elLeftMargin;
+        elHeight = parseFloat($el.outerHeight());
+        w = viewportDetails();
+        topRoom = $el.offset().top - w.scrollY + elHeight / 2;
+        leftRoom = $el.offset().left - w.scrollX + elWidth / 2;
+        return {
+          topRoom: topRoom,
+          bottomRoom: w.height - topRoom,
+          leftRoom: leftRoom,
+          rightRoom: w.width - leftRoom,
+          leftRelative: leftRoom / w.width,
+          topRelative: topRoom / w.height
+        };
+      };
+      viewportDetails = function() {
+        var $window;
+        $window = $(window);
+        return {
+          width: window.innerWidth,
+          height: window.innerHeight,
+          scrollX: $window.scrollLeft(),
+          scrollY: $window.scrollTop()
+        };
+      };
+      addBreakpoint = function(size, trueCallback, falseCallback, deleteDelay, removeOpen) {
+        var falseDefaultPositionSetting, minMax, mqListener, mql, query, s, trueDefaultPositionSetting;
+        if (deleteDelay == null) {
+          deleteDelay = settings.popoverDeleteDelay;
+        }
+        if (removeOpen == null) {
+          removeOpen = true;
+        }
+        mql = void 0;
+        minMax = void 0;
+        s = void 0;
+        if (typeof size === "string") {
+          s = size.toLowerCase() === "iphone" ? "<320px" : size.toLowerCase() === "ipad" ? "<768px" : size;
+          minMax = s.charAt(0) === ">" ? "min" : s.charAt(0) === "<" ? "max" : null;
+          query = minMax ? "(" + minMax + "-width: " + (s.substring(1)) + ")" : s;
+          mql = window.matchMedia(query);
+        } else {
+          mql = size;
+        }
+        if (mql.media && mql.media === "invalid") {
+          return {
+            added: false,
+            mq: mql,
+            listener: null
+          };
+        }
+        trueDefaultPositionSetting = minMax === "min";
+        falseDefaultPositionSetting = minMax === "max";
+        trueCallback = trueCallback || makeDefaultCallbacks(removeOpen, deleteDelay, trueDefaultPositionSetting, function($popover) {
+          return $popover.addClass("is-bottom-fixed");
+        });
+        falseCallback = falseCallback || makeDefaultCallbacks(removeOpen, deleteDelay, falseDefaultPositionSetting, function() {});
+        mqListener = function(mq) {
+          if (mq.matches) {
+            trueCallback(removeOpen, bigfoot);
+          } else {
+            falseCallback(removeOpen, bigfoot);
+          }
+        };
+        mql.addListener(mqListener);
+        mqListener(mql);
+        settings.breakpoints[size] = {
+          added: true,
+          mq: mql,
+          listener: mqListener
+        };
+        return settings.breakpoints[size];
+      };
+      makeDefaultCallbacks = function(removeOpen, deleteDelay, position, callback) {
+        return function(removeOpen, bigfoot) {
+          var $closedPopovers;
+          $closedPopovers = void 0;
+          if (removeOpen) {
+            $closedPopovers = bigfoot.close();
+            bigfoot.updateSetting("activateCallback", callback);
+          }
+          return setTimeout((function() {
+            bigfoot.updateSetting("positionContent", position);
+            if (removeOpen) {
+              return bigfoot.activate($closedPopovers);
+            }
+          }), deleteDelay);
+        };
+      };
+      removeBreakpoint = function(target, callback) {
+        var b, breakpoint, mq, mqFound;
+        mq = null;
+        b = void 0;
+        mqFound = false;
+        if (typeof target === "string") {
+          mqFound = settings.breakpoints[target] !== undefined;
+        } else {
+          for (b in settings.breakpoints) {
+            if (settings.breakpoints.hasOwnProperty(b) && settings.breakpoints[b].mq === target) {
+              mqFound = true;
+            }
+          }
+        }
+        if (mqFound) {
+          breakpoint = settings.breakpoints[b || target];
+          if (callback) {
+            callback({
+              matches: false
+            });
+          } else {
+            breakpoint.listener({
+              matches: false
+            });
+          }
+          breakpoint.mq.removeListener(breakpoint.listener);
+          delete settings.breakpoints[b || target];
+        }
+        return mqFound;
+      };
+      updateSetting = function(newSettings, value) {
+        var oldValue, prop;
+        oldValue = void 0;
+        if (typeof newSettings === "string") {
+          oldValue = settings[newSettings];
+          settings[newSettings] = value;
+        } else {
+          oldValue = {};
+          for (prop in newSettings) {
+            if (newSettings.hasOwnProperty(prop)) {
+              oldValue[prop] = settings[prop];
+              settings[prop] = newSettings[prop];
+            }
+          }
+        }
+        return oldValue;
+      };
+      getSetting = function(setting) {
+        return settings[setting];
+      };
+      $(document).ready(function() {
+        footnoteInit();
+        $(document).on("mouseenter", ".bigfoot-footnote__button", buttonHover);
+        $(document).on("touchend click", touchClick);
+        $(document).on("mouseout", ".is-hover-instantiated", unhoverFeet);
+        $(document).on("keyup", escapeKeypress);
+        $(window).on("scroll resize", repositionFeet);
+        return $(document).on("gestureend", function() {
+          return repositionFeet();
+        });
+      });
+      bigfoot = {
+        removePopovers: removePopovers,
+        close: removePopovers,
+        createPopover: createPopover,
+        activate: createPopover,
+        repositionFeet: repositionFeet,
+        reposition: repositionFeet,
+        addBreakpoint: addBreakpoint,
+        removeBreakpoint: removeBreakpoint,
+        getSetting: getSetting,
+        updateSetting: updateSetting
+      };
+      return bigfoot;
+    };
+  })(jQuery);
+
+}).call(this);
