@@ -1,7 +1,5 @@
-// Inutile qui
-// Messo inline vedi js_scripts.html
 $(document).ready(function() {
-
+  
   expand();
 
   // add lightbox class to all image links

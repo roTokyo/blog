@@ -341,61 +341,6 @@ ol li, ul li {
   border: 1px solid #FF0025;
 }
 
-#contactButtons {
-  display: inline-block;
-  vertical-align: middle;
-}
-
-#contactButtons:after {
-  content: "";
-  display: block;
-  clear: both;
-}
-
-#contactButtons {
-  margin-bottom: 1em;
-}
-
-#contactButtons a {
-  position: relative;
-  text-align: left;
-  height: 55px;
-  width: calc((100vw / 4) - 20px);
-  float: left;
-  text-align: center;
-}
-
-#contactButtons a svg {
-  height: 55px;
-  fill: #263959;
-  margin-top: 10px;
-}
-
-#contactButtons a.mail:hover svg {
-  fill: #7d7d7d;
-}
-
-#contactButtons a.whatsapp:hover svg {
-  fill: #a1e77e;
-}
-
-#contactButtons a.line:hover svg {
-  fill: #82b930;
-}
-
-#contactButtons a.imessage:hover svg {
-  fill: #77a9f6;
-}
-
-@media only screen and (min-width: 769px) {
-  #contactButtons a {
-    width: 55px;
-  }
-  #contactButtons a svg {
-    height: 40px;
-  }
-}
-
 /* Forms  ----------------------------  */
 form, fieldset, label, input, textarea {
   font-family: monospace;
@@ -1218,16 +1163,6 @@ table {
   color: #ffffff;
   font-weight: 600;
   border: 1px solid #FF0025;
-}
-
-.o-pagination .on-off {
-  display: none;
-}
-
-@media screen and (min-width: 380px) {
-  .o-pagination .on-off {
-    display: block;
-  }
 }
 
 /* Pages  ----------------------------  */
@@ -2074,7 +2009,6 @@ section {
   letter-spacing: 1px;
 }
 
-/* <!-- End Site Footer --> */
 /* Query  ----------------------------  */
 @media only screen and (max-width: 992px) {
   .o-post-index {
