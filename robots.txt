@@ -8,7 +8,7 @@ Disallow: /drafts/
 Disallow: /private/
 
 # Sitemap
-Sitemap: https://rotokyo.github.io/nicolofamily/sitemap.xml
+Sitemap: https://rotokyo.github.io/blog/sitemap.xml
 
 # Nota:
 # - Tutte le pagine sono indicizzabili
