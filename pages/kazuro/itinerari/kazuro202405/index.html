@@ -109,6 +109,11 @@
   transform: rotate(180deg);
 }
 
+.accordion-item.blocked {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 /* Nested lists */
 .listaFormattata ul {
   margin: 0.75rem 0 0.5rem 0;
@@ -247,7 +252,7 @@
   Alla ricerca dell'Aomomiji  
 </div>
 
-<div class="o-btnLink-bg">
+<div class="o-btnLink-bg doNotPageBreakInside">
   <a href="https://www.google.com/maps/d/u/0/viewer?mid=1_-_Ut0MXnFR_K7aMMQVqmPmXAANhk4M&amp;ll=34.78771122470663%2C135.71080165553485&amp;z=9" class="extLink btnLinkBox-bg" target="_blank" rel="noopener noreferrer nofollow noopener noreferrer nofollow">
     <div class="btnLinkContentWrapper-bg">
       <div class="btnLinkHeader-bg">
@@ -1181,21 +1186,6 @@ document.addEventListener('DOMContentLoaded', () => {
     btnCockieAccept.onclick=()=>{ setC("roTokyoCookiesAccepted","true",7); ui(true); };
   });
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
