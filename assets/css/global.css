@@ -837,6 +837,10 @@ table {
   margin-left: 2rem;
 }
 
+.u-mb-10px {
+  margin-bottom: -10px;
+}
+
 .u-w70 {
   max-width: 70%;
 }
