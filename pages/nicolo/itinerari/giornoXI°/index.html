@@ -26,7 +26,7 @@
 
   
     
-    <meta property="og:image" content="https://rotokyo.github.io/blog/looking.jpg">
+    <meta property="og:image" content="https://rotokyo.github.io/blog/nicolo_main_11.jpg">
   
 
 	<!-- End SEO Section -->
@@ -100,6 +100,68 @@ label {
   display: inline;
   font-size: 1rem;
 }
+.boxTextImage {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin: 0 0 2rem 0;
+}
+
+.boxTextWrapper {
+  flex: 1;
+}
+
+.boxImage {
+  flex: 1;
+  text-align: center;
+}
+.boxImage img {
+  max-width: 60%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* Divisione 50/50 */
+.boxTextImage.equal > .boxTextWrapper, .boxTextImage.equal > .boxImage {
+  flex: 1;
+}
+.boxTextImage.textWide > .boxTextWrapper {
+  flex: 2;
+}
+.boxTextImage.textWide > .boxImage {
+  flex: 1;
+}
+.boxTextImage.imageWide > .boxTextWrapper {
+  flex: 1;
+}
+.boxTextImage.imageWide > .boxImage {
+  flex: 2;
+}
+
+/* Divisione 1/3 - 2/3 */
+/* Divisione 2/3 - 1/3 */
+@media (max-width: 768px) {
+  .boxTextImage {
+    display: block;
+  }
+
+  .boxTextWrapper {
+    width: 100%;
+    display: block;
+  }
+
+  .boxImage {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  .boxImage img {
+    display: block;
+    margin: 0 auto;
+    max-width: 80%;
+  }
+}
 </style>
 
 	<link rel="sitemap"    href="/blog/sitemap.xml" type="application/xml" title="Sitemap">
@@ -159,8 +221,8 @@ label {
 
   <figure>
     <div class="o-post-cover-image u-tac">
-      <a href="/blog/assets/images/posts/heroes/looking.jpg" class="progressive replace">
-        <img src="/blog/assets/images/posts/heroes/looking-blur.jpg" class="preview" alt="" title="">
+      <a href="/blog/assets/images/posts/heroes/nicolo_main_11.jpg" class="progressive replace">
+        <img src="/blog/assets/images/posts/heroes/nicolo_main_11-blur.jpg" class="preview" alt="" title="">
       </a>
       <figcaption class="u-tal"></figcaption>
     </div>
@@ -207,6 +269,22 @@ label {
   Tokyo: Un giro per i quartieri della città!  
 </div>
 
+<!-- NOTE AL TRAGITTO -->
+<h3 class="u-mt2" style="border-bottom: 1px solid #DDD;">🎯 Due parole sul percorso di oggi</h3>
+<div class="accordion">
+  <div class="accordion-item">
+    <h5 class="accordion-header"><b>Buongiorno,</b></h5>
+    <div class="accordion-content">
+      <p>La metropoli di Tokyo è un agglomerato di più di 100km di lunghezza ed 80km di larghezza, ospita una ventina di milioni di abitanti ai quali se sommiamo gli agglomerati confinanti dai quali esiste solo un confine amministrativo ma non geografico dobbiamo aggiungere altri diciassette milioni di persone.<br>
+      È una metropoli urbana che contiene di tutto ed il contrario di tutto al suo interno.<br>
+      Anche i suoi abitanti non la conoscono, non possono conoscerla solo viverla.<br>
+      Come turisti possiamo solo darle uno sguardo superficiale e rimanerne meravigliati, non di più.<br>
+      Oggi, facciamo una passeggiata in alcuni dei quartieri più famosi partendo dal cuore del paese, il santuario di <strong>Meiji-jingū</strong>.
+      </p>
+    </div>
+  </div>
+</div>
+
 <h3 class="u-mt2" style="border-bottom: 1px solid #DDD;">🗾 Mappa del percorso di oggi a Tokyo</h3>
 <!-- Google Map del mattino-->
 <div class="accordion">
@@ -250,23 +328,334 @@ label {
 </div>
 
 <h3 class="u-mt2" style="border-bottom: 1px solid #DDD;">🚏 Le fermate di oggi</h3>
-<ul class="u-mb3">
-  <li>⛩ visita al santuario di <b>Meiji-jingū</b>
-</li>
-  <li>🌆 visita al quartiere di <b>Harajuku</b>
-</li>
-  <li>
-<input type="checkbox" id="myCheckbox">  Pranzo: <b>🥩 tonkatsu al Maisen</b>
-</li>
-  <li>🌆 visita al quartiere di <b>Shibuya</b>
-</li>
-  <li>
-<input type="checkbox" id="myCheckbox">  Pranzo: <b>🍣 sushi al Sushi Tokyo Ten</b>
-</li>
-  <li>🌆 visita al quartiere di <b>Ginza</b>
-</li>
-</ul>
 
+<div class="accordion">
+  <div class="accordion-item">
+    <h5 class="accordion-header" style="margin-bottom: -15px;">⛩ visita al santuario di <b>Meiji-jingū</b> ⇣</h5>
+    <div class="accordion-content">
+      <ul class="u-ml2">
+        <p><b>Spigolature e note a margine:</b></p>
+        <li>
+          <p>Per rappresentare l’unità del paese, l’<strong>imperatore Meiji</strong> fece erigere questo imponente santuario e richiese a tutte le province del paese di contribuire inviando, per il parco che circonda il luogo, le varietà di piante presenti sulle loro terre. L’intera foresta è … un <strong>giardino</strong>!<br>
+          Che differenza da quelli che avete visitato fin’ora!<br>
+          </p>
+        </li>
+        <li>
+          <p>Le due piante di canfora (ovviamente una maschile e l’altra femminile), simbolo di unità e fedeltà, sono incredibili.
+          </p>
+        </li>
+        <li>
+          <p>All’interno del Forrest Terrace Meiji Jingu c’è il negozio di souvenir dove potete acquistare lo 🔥<strong>yamacha</strong>. È una tisana (senza teina) a base di erbe che si trova(va?) solo qui!
+          </p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- WEB SITE -->
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<div class="o-btnLink-bg doNotPageBreakInside">
+  <a href="https://www.meijijingu.or.jp/" class="extLink btnLinkBox-bg" target="_blank" rel="noopener noreferrer nofollow noopener noreferrer nofollow">
+    <div class="btnLinkContentWrapper-bg">
+      <div class="btnLinkHeader-bg">
+        <img src="https://www.meijijingu.or.jp/common_img/favicon.ico" class="btnLinkIcon-bg" alt="Il santuario di Meiji-jingū icon">
+        <span class="btnLinkTitle-bg">Il santuario di Meiji-jingū</span>
+      </div>
+      <div class="btnLinkTag-bg">Web Site</div>
+      <div class="btnLinkDescription-bg">Il sito ufficiale del santuario di Meiji-jingū</div>
+    </div>
+    <div class="btnLinkImageWrapper-bg" style="background-image: url('https://www.meijijingu.or.jp/images/main.jpg')" aria-label="Il sito ufficiale del santuario di Meiji-jingū">
+    </div>
+  </a>
+</div>
+</div>
+
+<div class="accordion">
+  <div class="accordion-item">
+    <h5 class="accordion-header" style="margin-bottom: -15px;">🌆 visita al quartiere di <b>Harajuku</b> ⇣</h5>
+    <div class="accordion-content">
+      <ul class="u-ml2">
+        <p><b>Spigolature e note a margine:</b></p>
+        <li>
+          <p>Ad Harajuku si va (sarebbe meglio dire <em>andava</em>) principalmente per esplorare il cuore della moda giovanile e stravagante di Tokyo. Il quartiere è famoso per lo <strong>shopping sfrenato</strong>, la <strong>cultura pop</strong>, i <strong>caffè a tema animale</strong> e l’<strong>iconico stile kawaii</strong>.</p>
+        </li>
+        <li>
+          <p>
+            🔥🔥🔥 Con una passeggiata di … ±10min si arriva fino al <strong>museo 🏛 Ota</strong> per gli amanti delle stampe <strong>ukiyo-e</strong>.<br>
+            È un museo molto piccolo al massimo una trentina di opere esposte che cambiano continuamente</p>
+        </li>
+        
+        <div class="boxTextImage doNotPageBreakInside textWide">
+          <div class="boxImage">
+            <img src="/blog/assets/images/posts/galleries/museo_ota/edohyaku-flyer.jpg" alt="" loading="lazy">
+          </div>
+          <div class="boxTextWrapper">
+            <p>
+                <br>
+                <strong>Imperdibile per gli amanti del genere</strong>:<br>
+                La mostra (maggio 2026) presenta in successione, ed eccezionalmente, tutte le 120 opere della serie «<strong>Cento vedute celebri di Edo</strong>» (名所江戸百景) dell’artista <strong>Utagawa Hiroshige</strong> (1797–1858).
+            </p>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+  <!-- WEB SITE -->
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<div class="o-btnLink-bg doNotPageBreakInside">
+  <a href="https://www.takeshita-street.com/" class="extLink btnLinkBox-bg" target="_blank" rel="noopener noreferrer nofollow noopener noreferrer nofollow">
+    <div class="btnLinkContentWrapper-bg">
+      <div class="btnLinkHeader-bg">
+        <img src="https://www.takeshita-street.com/images/favicon.ico" class="btnLinkIcon-bg" alt="Takeshita Street e Harajuku icon">
+        <span class="btnLinkTitle-bg">Takeshita Street e Harajuku</span>
+      </div>
+      <div class="btnLinkTag-bg">Web Site</div>
+      <div class="btnLinkDescription-bg">Il sito ufficiale di Takeshita Street</div>
+    </div>
+    <div class="btnLinkImageWrapper-bg" style="background-image: url('https://lh3.googleusercontent.com/gps-cs-s/APNQkAH8pdqDTHDITcBB5TrbVNyDNG8cdo25suOMe8fsVszKo5935T3b8924R5JNQUudQh5kJ85aGm0-6m0eWv2szazzrbeox0n6aet4CgaYRXzvacWHPu2vjLPS3-L2Pq22plN1IaPqOMD0ol-I=s871-k-no')" aria-label="Il sito ufficiale di Takeshita Street">
+    </div>
+  </a>
+</div>
+</div>
+
+<div class="accordion" style="margin-bottom:2rem">
+  <div class="accordion-item">
+    <h5 class="accordion-header" style="margin-bottom: -15px;">🍽 Pranzo al Maisen ... il tonkatsu al suo meglio  ⇣</h5>
+    <div class="accordion-content">
+      <ul class="u-ml2">
+        <li>
+          <p>Ristorante storico realizzato all’interno di un ex <em>sentō</em>, cioè un bagno pubblico giapponese riconvertito.<br>
+          Il loro slogan parla di un tonkatsu «tagliabile con le bacchette».
+          </p>
+        </li>
+        <!-- WEB SITE -->
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<div class="o-btnLink-bg doNotPageBreakInside">
+  <a href="https://mai-sen.com/" class="extLink btnLinkBox-bg" target="_blank" rel="noopener noreferrer nofollow noopener noreferrer nofollow">
+    <div class="btnLinkContentWrapper-bg">
+      <div class="btnLinkHeader-bg">
+        <img src="https://mai-sen.com/favicon.ico" class="btnLinkIcon-bg" alt="Ristorante Maisen icon">
+        <span class="btnLinkTitle-bg">Ristorante Maisen</span>
+      </div>
+      <div class="btnLinkTag-bg">Web Site</div>
+      <div class="btnLinkDescription-bg">Ristorante Maisen ... il Tonkatsu al suo meglio.</div>
+    </div>
+    <div class="btnLinkImageWrapper-bg" style="background-image: url('https://mai-sen.com/common/img/ogp.png')" aria-label="">
+    </div>
+  </a>
+</div>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="accordion-item">
+    <h5 class="accordion-header" style="margin-bottom: -15px;">🌆 visita al quartiere di <b>Shibuya</b> ⇣</h5>
+    <div class="accordion-content">
+      <ul class="u-ml2">
+      </ul>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<div class="o-btnLink-bg doNotPageBreakInside">
+  <a href="https://www.youtube.com/watch?v=6qGiXY1SB68" class="extLink btnLinkBox-bg" target="_blank" rel="noopener noreferrer nofollow noopener noreferrer nofollow">
+    <div class="btnLinkContentWrapper-bg">
+      <div class="btnLinkHeader-bg">
+        <img src="https://www.youtube.com/s/desktop/b232f2cf/img/favicon_144x144.png" class="btnLinkIcon-bg" alt="Shibuya at night icon">
+        <span class="btnLinkTitle-bg">Shibuya at night</span>
+      </div>
+      <div class="btnLinkTag-bg">You Tube</div>
+      <div class="btnLinkDescription-bg">Japan - Tokyo Shibuya at night of 2017</div>
+    </div>
+    <div class="btnLinkImageWrapper-bg" style="background-image: url('https://i.ytimg.com/vi/6qGiXY1SB68/maxresdefault.jpg')" aria-label="Japan - Tokyo Shibuya at night of 2017">
+    </div>
+  </a>
+</div>      
+      <!-- WEB SITE -->
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<div class="o-btnLink-bg doNotPageBreakInside">
+  <a href="https://tokyu-plaza.com.e.auj.hp.transer.com/shibuya/shop/detail/070200003?tenant_cd=070200003" class="extLink btnLinkBox-bg" target="_blank" rel="noopener noreferrer nofollow noopener noreferrer nofollow">
+    <div class="btnLinkContentWrapper-bg">
+      <div class="btnLinkHeader-bg">
+        <img src="https://tokyu-plaza.com/shibuya/theme/sby/assets/images/favicon/webclip-icon.png" class="btnLinkIcon-bg" alt="Yakitori Arakiyama icon">
+        <span class="btnLinkTitle-bg">Yakitori Arakiyama</span>
+      </div>
+      <div class="btnLinkTag-bg">Web Site</div>
+      <div class="btnLinkDescription-bg">Uno yakitori per ...</div>
+    </div>
+    <div class="btnLinkImageWrapper-bg" style="background-image: url('https://tokyu-plaza.com/shibuya/theme/sby/files/shop/20221112shop_sc_shop_img_21703_img.jpgh.jpg?2125624319')" aria-label="Uno yakitori per ...">
+    </div>
+  </a>
+</div>
+    </div>
+  </div>
+  <!-- WEB SITE -->
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<div class="o-btnLink-bg doNotPageBreakInside">
+  <a href="https://www.japan-guide.com/e/e3007.html" class="extLink btnLinkBox-bg" target="_blank" rel="noopener noreferrer nofollow noopener noreferrer nofollow">
+    <div class="btnLinkContentWrapper-bg">
+      <div class="btnLinkHeader-bg">
+        <img src="https://www.japan-guide.com/favicon.ico" class="btnLinkIcon-bg" alt="Japan Guide icon">
+        <span class="btnLinkTitle-bg">Japan Guide</span>
+      </div>
+      <div class="btnLinkTag-bg">Web Site</div>
+      <div class="btnLinkDescription-bg">Uno degli innumerevoli siti che descrivono il quartiere</div>
+    </div>
+    <div class="btnLinkImageWrapper-bg" style="background-image: url('https://www.japan-guide.com/g18/3007_01.jpg')" aria-label="Uno degli innumerevoli siti che descrivono il quartiere di Shibuya">
+    </div>
+  </a>
+</div>
+</div>
+
+<div class="accordion" style="margin-bottom:2rem">
+  <div class="accordion-item">
+    <h5 class="accordion-header" style="margin-bottom: -15px;">🍣 Pranzo o Cena al ... il sushi al suo meglio  ⇣</h5>
+    <div class="accordion-content">
+      <ul class="u-ml2">
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+<div class="o-btnLink-bg doNotPageBreakInside">
+  <a href="/blog/2022/01/17/sushi.html" class="btnLinkBox-bg">
+    <div class="btnLinkContentWrapper-bg">
+      <div class="btnLinkHeader-bg">
+        <img src="/blog/assets/images/torii.svg" class="btnLinkIcon-bg" alt="Enjoy Japan! icon">
+        <span class="btnLinkTitle-bg">Enjoy Japan!</span>
+      </div>
+      <div class="btnLinkTag-bg">Il Sushi 寿司 ...</div>
+      <div class="btnLinkDescription-bg">Aldilà dei kaitenzushi</div>
+    </div>
+    <div class="btnLinkImageWrapper-bg" style="background-image: url('/blog/assets/images/posts/galleries/ilsushi/ilsushi_sushi-thumb.jpg')" aria-label="«Sushi»">
+    </div>
+  </a>
+</div>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="accordion">
+  <div class="accordion-item">
+    <h5 class="accordion-header" style="margin-bottom: -15px;">🌆 visita al quartiere di <b>Ginza</b> ⇣</h5>
+    <div class="accordion-content">
+      <ul class="u-ml2">
+        <li>
+          <p>Il cuore dello shopping in <strong>Giappone</strong></p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
 <div class="o-btnLink-bg doNotPageBreakInside">
   <a href="/blog/2017/01/02/post_ginza.html" class="btnLinkBox-bg">
     <div class="btnLinkContentWrapper-bg">
@@ -281,6 +670,9 @@ label {
     </div>
   </a>
 </div>
+</div>
+<p><br>
+<br></p>
 
 <section class="o-separator u-tac u-mt1 doNotPrint">
   <h3 class="separator-title post-separator">Vai al giorno ...</h3>
