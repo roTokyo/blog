@@ -497,7 +497,7 @@ ol li ol li, ol li ul li, ul li ol li, ul li ul li {
   opacity: 0.9;
 }
 
-.btnCockies {
+.btnCookiess {
   color: #FFFFFF;
   background-color: #FF0025;
   border: 1px solid #FF0025;
@@ -506,10 +506,10 @@ ol li ol li, ol li ul li, ul li ol li, ul li ul li {
   border-radius: 5px;
   padding: 10px 25px;
 }
-.btnCockies:visited {
+.btnCookiess:visited {
   color: #FFFFFF;
 }
-.btnCockies:hover {
+.btnCookiess:hover {
   color: #263959;
   background-color: #DDDDDD;
   border: 1px solid #FF0025;
