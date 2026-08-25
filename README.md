@@ -2,7 +2,7 @@
 
 This site is about Japan.
 It is written in italian and report some few experieces I did in the country in the last 30 years. It's a work in progress so I do not think this site should be public yet.
-
+  
 Most of the material I collected during this period is analog, for that, it will take time to tranfer, at least some parts, to the digital world!
 
 ##### [**Site Layout**][layout]: from © David Freeman
