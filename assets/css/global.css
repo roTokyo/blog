@@ -841,10 +841,6 @@ table {
   margin-bottom: -10px;
 }
 
-.u-w70 {
-  max-width: 70%;
-}
-
 .u-ttc {
   text-transform: capitalize;
 }
@@ -869,7 +865,19 @@ table {
   max-width: 60%;
 }
 
-.u-w100 {
+.u-mw70 {
+  max-width: 70%;
+}
+
+.u-mw80 {
+  max-width: 80%;
+}
+
+.u-mw90 {
+  max-width: 90%;
+}
+
+.u-mw100 {
   width: 100%;
 }
 
