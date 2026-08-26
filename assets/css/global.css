@@ -1168,6 +1168,10 @@ table {
   }
 }
 /* Components  -----------------------  */
+.c-post-tag_wrapper {
+  text-align: right;
+}
+
 .c-post-tag {
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
