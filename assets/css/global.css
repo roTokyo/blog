@@ -1455,44 +1455,6 @@ table {
   position: relative;
 }
 
-.o-post-tag {
-  /*float: right */
-  text-align: right;
-  font-size: 1em;
-  color: #333030;
-  font-weight: 400;
-  line-height: 1;
-  margin: 0 2em 2em 0;
-}
-.o-post-tag .post-tag-title {
-  font-weight: 700;
-  line-height: 1.5;
-  font-variant: small-caps;
-  margin: 0 8px 0 0;
-}
-.o-post-tag .post-tag {
-  background-color: #263959;
-  padding: 0.2rem 0.5rem;
-  font-size: 0.875em;
-  color: #FBFBFB;
-  font-weight: 500;
-  margin-right: 0.5rem;
-  border-radius: 4px;
-  text-decoration: none;
-  transition: all 0.1s ease-in-out;
-}
-.o-post-tag .post-tag:before {
-  content: "";
-  font-family: "Font Awesome 5 Free";
-  font-weight: 600;
-  padding-right: 0.5em;
-}
-.o-post-tag .post-tag:hover {
-  color: #263959;
-  text-decoration: none;
-  background-color: #FBFBFB;
-}
-
 .o-post-wrapper {
   display: block;
   width: 100%;
@@ -2208,12 +2170,12 @@ section {
     white-space: normal;
   }
   .o-btnLink-bg .btnLinkBox-bg .btnLinkContentWrapper-bg .btnLinkTag-bg {
-    font-size: 1rem;
+    font-size: 0.875rem;
     letter-spacing: 1px;
   }
   .o-btnLink-bg .btnLinkBox-bg .btnLinkContentWrapper-bg .btnLinkDescription-bg {
     -webkit-line-clamp: 2;
-    font-size: 0.8rem;
+    font-size: 0.675rem;
   }
 }
 /* Query  ----------------------------  */
