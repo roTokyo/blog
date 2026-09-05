@@ -4,11 +4,11 @@
 *
 *
 *  Creator:       Ro
-*  WebSite:       ro.github.io
+*  WebSite:       https://www.flickr.com/photos/rotokyo/
 *  Photo Gallery: 
 *  Location:      Japan, Tokyo
 *
-*  Last updated: 2026-09-03 21:28:37 +0900
+*  Last updated: 2026-09-05 11:49:47 +0900
 *
 *  Language:     Japanese, English, Italiano
 *  Built with:   Jekyll 3.9.5 <https://jekyllrb.com>
